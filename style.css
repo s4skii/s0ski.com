@@ -3,11 +3,8 @@
     padding: 0px;   
 }
 
-
-body{
-    background-color: black;
-    color:WHITE;
-    
+body.page1{
+    background-color:#19323C ;
 }
 nav{
     width: 100%;
