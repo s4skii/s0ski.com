@@ -20,6 +20,7 @@ body.page1{
 body.page2{
     background-color:#8C271E ;
     margin-top: 30px;
+    
 }
 nav{
     position: fixed;
@@ -27,6 +28,9 @@ nav{
     width: 100%; /* Full width */
     background-color: #333;
     overflow: hidden;
+    background-image: linear-gradient(to right, #1B998B, #19323C ,#8C271E);
+    display: flex;
+    justify-content: center
 }
   
 
