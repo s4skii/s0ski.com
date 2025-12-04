@@ -13,7 +13,7 @@ body.index{
     list-style-type: none;
     margin-top: 30px;
     text-align: center;
-    style:bordergimg {
+    style:border img {
         border: 10px solide transparent;
         padding: 15px;
         border-image: url(Ressources/Ulysse.jpg) 30 stretch;
