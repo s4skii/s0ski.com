@@ -13,13 +13,8 @@ body.index{
     list-style-type: none;
     margin-top: 30px;
     text-align: center;
-    style:border{
-        border: 10px solid transparent;
-        padding: 15px;
-        border-image: url(Ressources/Ulysse.jpg) 30 stretch;
-
-    }
 }
+
 body.page1{
     background-color:#19323C ;
     margin-top: 30px;
@@ -28,7 +23,12 @@ body.page2{
     background-color:#8C271E ;
     margin-top: 30px;
     text-align: center;
-
+}
+.p1.page2{
+    font-family: "Arial";
+}
+.p2.page2{
+    font-family: "Calibri"
 }
 
 nav{
