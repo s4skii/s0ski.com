@@ -6,6 +6,7 @@
     overflow-x: hidden;
 }
 
+body { /* opacité initiale pour effet de fondu */
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
 }
@@ -21,6 +22,10 @@ nav { /* barre de navigation fixe en haut */
     top: 0;
     left: 0;
     width: 100%;
+    background-image: linear-gradient(to right, #1B998B, #19323C, #8C271E);
+    z-index: 999; /* ne bouge pas le layout */
+    
+    display: flex;
     justify-content: center;
 }
 
