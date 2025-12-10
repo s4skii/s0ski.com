@@ -1,34 +1,123 @@
-*{
+/* CODE GENERAL-INTER PAGES, A NE PAS MODIFIER */
+*{ /* insertion de marges par défaut pour rendre le rendu + homogène */
     margin: 0px;
     padding: 0px;
-    ::view-transition {
-        background-color: rgb(0 0 0 / 25%);
-      }
+    list-style: none;
+    overflow-x: hidden;
+}
+
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.loaded { /* opacité finale pour effet de fondu */
+    opacity: 1;
 }
 
 
-body.index{
+/* BARRE DE NAVIGATION */
+nav { /* barre de navigation fixe en haut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+nav ul { /* liste des éléments de navigation */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 900px;
+}
+
+nav li { /* égalisation de la largeur des éléments */
+    flex: 1;
+}
+
+nav a { /* style des liens de navigation vers index, page1 etc.. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.25s ease-in-out;
+}
+
+nav a:hover,nav a.active { /* effet au survol et de sélection de page active */
+    border-bottom: 3px solid red;
+}
+
+
+/* CODE SPECIFIQUE A CHAQUE PAGE */
+
+
+/*INDEX*/
+body.index{ /* couleur de fond de la page d'index et mise en forme */
     background-color:#1B998B ;
     list-style-type: none;
     margin-top: 30px;
     text-align: center;
 }
-.bloc{
+
+.box { /* style des "box", */
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.section1 { /* style de la section 1 */
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 0 18px;
+  color: whitesmoke;
+}
+
+.citat { /* style des citations */
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.imgindex img { /* style des images de l'index */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+blockquote { /* style des blockquotes */
+  margin: 12px 0;
+  padding-left: 12px;
+  border-left: 3px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+
+/* PAGE 1 - ARSENE LUPIN */
+body.page1{ /* couleur de fond de la page 1 et mise en forme */
+    background-color:#19323C ;
+    margin-top: 30px;
+}
+
+.bloc{ /* style du bloc vidéo en arrière plan */
     height: 100vh;
     width: 100%;
 }
-.bloc video{
-    position: absolute;
-    min-height: 100%;
-    min-width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -100;
 
-}
-
-.Titre{
+.Titre{ /* style du titre par dessus la vidéo */
     color: white;
     font-size: 60px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,9 +125,9 @@ body.index{
     margin-top: 20vh;
     position: relative;
     text-align: center;
-    z-index: -1;
 }
-.encadre{
+
+.encadre{ /* style de l'encadrement du titre */
     border: 2px solid white;
     display: inline-block;
     text-align: center;
@@ -46,57 +135,125 @@ body.index{
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
 }
-body.page1{
-    background-color:#19323C ;
-    margin-top: 30px;
+
+.bloc video{ /* style de la vidéo en arrière plan */
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
 }
-body.page2{
+
+.texte { /* style du texte principal de la page 1 */
+    max-width: 900px;        
+    margin: 80px auto 40px;  
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+
+.texte h2 { /* style des sous-titres de la page 1 */
+    color: #1B998B;          
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.texte p { /* style des paragraphes de la page 1 */
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.texte ul { /* style des listes de la page 1 */
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.texte li { /* style des éléments de liste de la page 1 */
+    margin-bottom: 10px;
+    padding-left: 6px;
+    position: relative;
+}
+
+.texte li::before { /* liste à puces personnalisées pour les listes de la page 1 */
+    content: "»";             
+    position: absolute;
+    left: -15px;
+    color: #FFDD00;           
+    font-weight: bold;
+}
+
+
+.texte a { /* style des liens de la page 1 */
+    color: #FFDD00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.texte a:hover { /* effet au survol des liens de la page 1 */
+    color: #1B998B;
+    text-decoration: underline;
+}
+
+
+.texte footer { /* style du footer du texte de la page 1 */
+    display: block;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    font-style: italic;
+    color: #ccc;
+    text-align: center;
+}
+
+.imglupin { /* style de l'image animée de lupin */
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;   
+}
+.imglupin img { /* animation de rotation de l'image de lupin */
+    width: 80px;
+    height: 80px;
+    animation: rotate360 5s linear infinite;
+}
+
+@keyframes rotate360 { /* définition de l'animation de rotation */
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* PAGE 2 - LA CASA DE PAPEL */
+body.page2{ /* couleur de fond de la page 2 et mise en forme */
     background-color:#8C271E ;
     margin-top: 30px;
     text-align: center;
 }
 
-.p2.page2{
+.p2.page2{ /* style du texte principal de la page 2 */
+    max-width: 900px;
     font-style: bold;
 }
 
-nav{
-    position: fixed;
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    background-color: #333;
-    overflow: hidden;
-    background-image: linear-gradient(to right, #1B998B, #19323C ,#8C271E);
-    display: flex;
-    justify-content: center
-    
-}
-  
-
-nav ul{
-    list-style-type: none;
-}
-
-nav li{
-    float: left;
-    width: 33%;
-}
 
 
-nav a{
-    float: left;
-    color: #f2f2f2;
+
+.s0ski{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-nav a.active{
-    border-bottom: 3px solid red;
-    transition: border-bottom 0.1s ease-in-out;
-}
-nav a:hover{
-    border-bottom: 3px solid red;
-    transition: border-bottom 0.3s ease-in-out;
-    
+    margin-top: 20px;
+
+
 }
