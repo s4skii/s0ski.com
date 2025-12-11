@@ -1,4 +1,4 @@
-/* CODE GENERAL-INTER PAGES, A NE PAS MODIFIER */
+/* CODE GENERAL-INTER PAGES, NE PAS MODIFIER */
 *{ /* insertion de marges par défaut pour rendre le rendu + homogène */
     margin: 0px;
     padding: 0px;
@@ -9,6 +9,11 @@
 body { /* opacité initiale pour effet de fondu */
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
+}
+
+body a:hover { /* body effet au survol des liens */
+    color: #1B998B;
+    text-decoration: underline;
 }
 
 body.loaded { /* opacité finale pour effet de fondu */
@@ -22,7 +27,7 @@ nav { /* barre de navigation fixe en haut */
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to right, #1B998B, #19323C, #8C271E);
+    background-image: linear-gradient(to right, #525758, #19323C, #8C271E);
     z-index: 999; /* ne bouge pas le layout */
     
     display: flex;
@@ -64,50 +69,121 @@ nav a:hover,nav a.active { /* effet au survol et de sélection de page active */
 /* CODE SPECIFIQUE A CHAQUE PAGE */
 
 
-/*INDEX*/
-body.index{ /* couleur de fond de la page d'index et mise en forme */
-    background-color:#1B998B ;
-    list-style-type: none;
+/*INDEX -*/
+body.index{ /* fond et mise en forme*/
+    background-color:#525758;
     margin-top: 30px;
     text-align: center;
 }
 
-.box { /* style des "box", */
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 18px;
-  border-radius: 10px;
-  margin-bottom: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+.indexheader { /* petit header simple pour l'accueil */
+    max-width: 900px;
+    margin: 60px auto 20px;
+    padding: 16px 20px;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-.section1 { /* style de la section 1 */
-  max-width: 1000px;
-  margin: 36px auto;
-  padding: 0 18px;
+.indexheader h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.indexheader p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+.section1 { /*contenu principal*/
+    max-width: 900px;        
+    margin: 80px auto 40px;  
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.section1 h2 { /* section1 sous-titres */
+    color: #1B998B;          
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.section1 p { /* section1 paragraphes */
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.section1 ul { /* section1 listes */
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.section1 li { /* section1 objets de la liste */
+    margin-bottom: 10px;
+    padding-left: 6px;
+    position: relative;
+}
+
+.section1 li::before { /* section1 puces personnalisées */
+    content: "»";             
+    position: absolute;
+    left: -15px;
+    color: #FFDD00;           
+    font-weight: bold;
+}
+
+.section1 a { /* section1 liens */
+    color: #FFDD00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.box { /* box style sombre */
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
   color: whitesmoke;
 }
 
-.citat { /* style des citations */
+.citat { /* citations  */
   text-align: center;
   padding: 24px 12px;
 }
 
-.imgindex img { /* style des images de l'index */
+blockquote { /* style blockquotes */
+  margin: 12px 0;
+  padding-left: 12px;
+  border-left: 3px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.imgindex img { /* images  */
   max-width: 100%;
   height: auto;
   display: block;
   margin: 12px auto;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-blockquote { /* style des blockquotes */
-  margin: 12px 0;
-  padding-left: 12px;
-  border-left: 3px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.9);
-  font-style: italic;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
 }
 
 
@@ -262,3 +338,4 @@ body.page2{ /* couleur de fond de la page 2 et mise en forme */
 
 
 }
+
