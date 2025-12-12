@@ -315,18 +315,13 @@ body.page1{ /* couleur de fond de la page 1 et mise en forme */
     }
 }
 
-/* PAGE 2 - LA CASA DE PAPEL */
-body.page2{ /* couleur de fond de la page 2 et mise en forme */
-    background-color:#8C271E ;
+
+
+.Cyka{ /* fond et mise en forme de la page 2 */
     margin-top: 30px;
     text-align: center;
+    background-color: #19323C;
 }
-
-.p2.page2{ /* style du texte principal de la page 2 */
-    max-width: 900px;
-    font-style: bold;
-}
-
 
 
 
